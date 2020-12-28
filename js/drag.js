@@ -1,11 +1,27 @@
 
-let arr = Array.from(document.getElementsByClassName("draggable"));
+addListenersToDraggables();
+addListenersToDropReceivers();
 
-for (let i = arr.length - 1; i >= 0; --i)
-{
-	arr[i].id = "draggable" + i;
-	arr[i].draggable = true;
-	arr[i].addEventListener("dragstart", (ev) => drag(ev) );
+function addListenersToDraggables() {
+
+	let draggables = Array.from(document.getElementsByClassName("draggable"));
+
+	for (let i = draggables.length - 1; i >= 0; --i)
+	{
+		draggables[i].id = "draggable" + i;
+		draggables[i].draggable = true;
+		draggables[i].addEventListener("dragstart", (ev) => drag(ev) );
+	}
+}
+
+function addListenersToDropReceivers() {
+	
+	let dropReceivers = Array.from(document.getElementsByClassName("dropReceiver"));
+
+	for (let i = dropReceivers.length - 1; i >= 0; --i) {
+		dropReceivers[i].addEventListener("drop", (ev) => drop(ev));
+		dropReceivers[i].addEventListener("dragover", (ev) => allowDrop(ev));
+	}
 }
 
 function allowDrop(ev) {
