@@ -1,23 +1,23 @@
-import chart from './chart.js';
+import cart from './cart.js';
 
 dragAddListener(
 	(draggbleId)  => {
 
 		let draggable = document.getElementById(draggbleId);
-		let total = chart.add(draggable.innerHTML, draggable.value);
+		let total = cart.add(draggable.innerHTML, draggable.value);
 
-		document.querySelector("#chart > span").innerHTML = chart.Sum;
+		document.querySelector("#cart > span").innerHTML = cart.Sum;
 
-		const chartItemId = 'chart' + draggable.innerHTML;
+		const cartItemId = 'cart' + draggable.innerHTML;
 
-		let item = document.getElementById(chartItemId);
+		let item = document.getElementById(cartItemId);
 
 		if (!item) {
 
 			item = document.createElement('li');
-			item.id = 'chart' + draggable.innerHTML;
+			item.id = 'cart' + draggable.innerHTML;
 		
-			document.getElementById('chart').appendChild(item);
+			document.getElementById('cart').appendChild(item);
 		}
 
 		item.innerHTML = `${draggable.innerHTML}: ${total}`;

@@ -1,4 +1,4 @@
-class Chart {
+class Cart {
 	constructor() {}
 
 	Sum = 0;
@@ -6,7 +6,7 @@ class Chart {
 	add(name, amount) {
 
 		this.Sum += amount;
-		
+
 		if (!this.collection) {
 			this.collection = {};
 		}
@@ -22,4 +22,4 @@ class Chart {
 	}
 }
 
-export default new Chart();
+export default new Cart();
