@@ -1,9 +1,9 @@
 import cart from './cart.js';
 
 dragAddListener(
-	(draggbleId)  => {
+	(draggableId)  => {
 
-		let draggable = document.getElementById(draggbleId);
+		let draggable = document.getElementById(draggableId);
 		let total = cart.add(draggable.innerHTML, draggable.value);
 
 		document.querySelector("#cart > span").innerHTML = cart.Sum;

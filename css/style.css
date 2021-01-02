@@ -1,3 +1,11 @@
+.showcase {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
 .cart {
 	width: 350px;
 	height: 70px;
