@@ -4,20 +4,20 @@ dragAddListener(
 	(draggableId)  => {
 
 		let draggable = document.getElementById(draggableId);
-		let total = cart.add(draggable.innerHTML, draggable.value);
+		let total = cart.add(draggableId, draggable.value);
 
-		document.querySelector("#cart > span").innerHTML = cart.Sum;
+		document.querySelector("#cart > #total").innerHTML = cart.Sum;
 
-		const cartItemId = 'cart' + draggable.innerHTML;
+		const cartItemId = 'cart' + draggable.id;
 
 		let item = document.getElementById(cartItemId);
 
 		if (!item) {
 
 			item = document.createElement('li');
-			item.id = 'cart' + draggable.id;
+			item.id = cartItemId;
 		
-			document.getElementById('cart').appendChild(item);
+			document.querySelector('#cart > ul').appendChild(item);
 		}
 
 		item.innerHTML = `${draggable.innerHTML}: ${total}`;
