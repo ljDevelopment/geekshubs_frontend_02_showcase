@@ -44,7 +44,7 @@ function drop(ev) {
 	let draggableId = ev.dataTransfer.getData("id");
 	let dropReceiverId = ev.target.id;
 	
-	listeners.map(c => c(draggableId, dropReceiverId));
+	listeners.forEach(l => l(draggableId, dropReceiverId));
 }
 
 let listeners = [];

@@ -15,7 +15,7 @@ dragAddListener(
 		if (!item) {
 
 			item = document.createElement('li');
-			item.id = 'cart' + draggable.innerHTML;
+			item.id = 'cart' + draggable.id;
 		
 			document.getElementById('cart').appendChild(item);
 		}
