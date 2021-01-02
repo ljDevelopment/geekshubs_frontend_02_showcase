@@ -5,9 +5,9 @@ body {
 
 .showcase {
 	list-style: none;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 100px));
+	grid-column-gap: 15%;
 	align-items: stretch;
 	justify-content: center;
     margin: 0 auto 0 auto;
@@ -15,7 +15,15 @@ body {
 	width: calc(100% - 200px);
 }
 
+@media (max-width:400px) {
+	.showcase {
+		grid-template-columns: repeat(2, minmax(50px, 1fr));
+	}
+}
 
+.showcase img {
+	width: 100%;
+}
 .cart {
 	position: fixed;
 	top:  5px;
