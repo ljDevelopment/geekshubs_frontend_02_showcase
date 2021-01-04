@@ -1,4 +1,5 @@
-import cart from './cart.js';
+
+let cart = new Cart();
 
 dragAddListener(
 	(draggableId)  => {
@@ -23,3 +24,12 @@ dragAddListener(
 		item.innerHTML = `${draggable.innerHTML}: ${total}`;
 	}
 );
+
+
+let cartListShown = false;
+function toggleCartList() {
+console.log(cartListShown);
+	cartListShown = !cartListShown;
+	document.getElementById("cartList").style.display =
+		cartListShown ? "block" : "none";
+}

@@ -48,4 +48,14 @@ header {
 
 #cartList {
 	display: none;
+	width: 100%;
+    position: relative;
+	top: 100%;
+	right: 100%;
+}
+
+.cart > input[type="button"] {
+	width: 100%;
+    position: relative;
+    top: 100%;
 }

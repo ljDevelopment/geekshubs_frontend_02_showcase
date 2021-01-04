@@ -21,5 +21,3 @@ class Cart {
 		return total;
 	}
 }
-
-export default new Cart();
