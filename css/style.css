@@ -7,25 +7,31 @@ header {
 	text-align: center;
 }
 
-.showcase {
+#showcase {
 	list-style: none;
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 100px));
-	grid-column-gap: 15%;
 	align-items: stretch;
-	justify-content: center;
+	justify-content: space-around;
     margin: 0 auto 0 auto;
 	padding: 0;
 	width: calc(100% - 200px);
 }
 
+.showcaseItem {
+	border: solid grey thin;
+	text-align: center;
+	padding: 0.5em;
+	margin: 0.5em;
+}
+
 @media (max-width:400px) {
-	.showcase {
+	#showcase {
 		grid-template-columns: repeat(2, minmax(50px, 1fr));
 	}
 }
 
-.showcase img {
+#showcase img {
 	width: 100%;
 }
 .cart {

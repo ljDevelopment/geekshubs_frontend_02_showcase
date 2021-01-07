@@ -1,5 +1,5 @@
 
-let cart = new Cart();
+const cart = new Cart();
 
 dragAddListener(
 	(draggableId)  => {
