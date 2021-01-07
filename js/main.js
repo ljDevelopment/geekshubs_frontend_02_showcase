@@ -21,7 +21,7 @@ dragAddListener(
 			document.querySelector('#cart > ul').appendChild(item);
 		}
 
-		item.innerHTML = `${draggable.innerHTML}: ${total}`;
+		item.innerHTML = `${draggable.innerHTML}<span>Partial: ${total}</span>`;
 	}
 );
 

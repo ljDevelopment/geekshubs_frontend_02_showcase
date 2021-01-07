@@ -57,11 +57,26 @@ header {
 	width: 100%;
     position: relative;
 	top: 100%;
-	right: 100%;
+	list-style: none;
+	padding: 1%;
+	margin: 0;
+	overflow: scroll;
+    height: 200px;
+    border: thin grey solid;
+    box-sizing: border-box;
+    font-size: 0.8em;
 }
 
 .cart > input[type="button"] {
 	width: 100%;
     position: relative;
     top: 100%;
+}
+
+#cartList img {
+	width: 100%;
+}
+
+#cartList div {
+	display: none;
 }
