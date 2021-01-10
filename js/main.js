@@ -17,19 +17,12 @@ dragAddListener(
 
 			item = document.createElement('li');
 			item.id = cartItemId;
+			item.className = "cartListItem";
 		
 			document.querySelector('#cart > ul').appendChild(item);
 		}
 
-		item.innerHTML = `${draggable.innerHTML}<span>Partial: ${total}</span>`;
+		item.innerHTML = `${draggable.innerHTML}<span>${total}</span>`;
 	}
 );
 
-
-let cartListShown = false;
-function toggleCartList() {
-console.log(cartListShown);
-	cartListShown = !cartListShown;
-	document.getElementById("cartList").style.display =
-		cartListShown ? "block" : "none";
-}

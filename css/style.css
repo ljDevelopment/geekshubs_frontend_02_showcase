@@ -39,7 +39,6 @@ header {
 	top:  7em;
 	right: 5px;
 	width: 75px;
-	height: 75px;
 	margin: 0;
 	padding: 10px;
 	border: 1px solid #aaaaaa;
@@ -53,30 +52,27 @@ header {
 }
 
 #cartList {
-	display: none;
 	width: 100%;
-    position: relative;
-	top: 100%;
 	list-style: none;
 	padding: 1%;
-	margin: 0;
+	margin: 75px 0 0 0;
 	overflow: scroll;
-    height: 200px;
-    border: thin grey solid;
+    height: 180px;
     box-sizing: border-box;
     font-size: 0.8em;
 }
 
-.cart > input[type="button"] {
-	width: 100%;
-    position: relative;
-    top: 100%;
+.cartListItem {
+	display: grid;
+	flex-flow: column wrap;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
 }
 
-#cartList img {
+.cartListItem img {
 	width: 100%;
 }
 
-#cartList div {
+.cartListItem div {
 	display: none;
 }
