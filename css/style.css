@@ -35,6 +35,7 @@ header {
 	width: 100%;
 }
 .cart {
+	font-size: 0.8em;
 	position: fixed;
 	top:  7em;
 	right: 5px;
@@ -59,7 +60,6 @@ header {
 	overflow: scroll;
     height: 180px;
     box-sizing: border-box;
-    font-size: 0.8em;
 }
 
 .cartListItem {
@@ -67,6 +67,7 @@ header {
 	flex-flow: column wrap;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
+	text-align: center;
 }
 
 .cartListItem img {
