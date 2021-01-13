@@ -1,28 +1,34 @@
 
 const cart = new Cart();
 
+cart.addListener(onCartChanged);
+
+const cartItemViews = {};
+
 dragAddListener(
 	(draggableId)  => {
 
 		let draggable = document.getElementById(draggableId);
-		let total = cart.add(draggableId, draggable.value);
+		cart.add(draggableId, draggable.value);
 
-		document.querySelector("#cart > #total").innerHTML = cart.Sum;
+		if (!cartItemViews[draggableId]) {
 
-		const cartItemId = 'cart' + draggable.id;
-
-		let item = document.getElementById(cartItemId);
-
-		if (!item) {
-
-			item = document.createElement('li');
-			item.id = cartItemId;
-			item.className = "cartListItem";
-		
-			document.querySelector('#cart > ul').appendChild(item);
+			cartItemViews[draggableId] = new CartItemView(cart, draggableId, draggable.value);
 		}
-
-		item.innerHTML = `${draggable.innerHTML}<span>${total}</span>`;
+		else {
+			cartItemViews[draggableId].updateItemPartial();
+		}
 	}
 );
+
+
+function onCartChanged(cart, item) {
+
+	document.querySelector("#cart > #total").innerHTML = cart.total;
+
+	if (cartItemViews[item]) {
+
+		cartItemViews[item].updateItemPartial();
+	}
+}
 
