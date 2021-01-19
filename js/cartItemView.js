@@ -34,7 +34,6 @@ class CartItemView {
 
 			const parent = document.querySelector('#cart > ul'); 
 			parent.appendChild(this.itemView);
-			console.log(this);
 	}
 
 	updateItemPartial() {

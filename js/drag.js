@@ -31,15 +31,13 @@ function allowDrop(ev) {
 }
 
 function drag(ev) {
-	console.log(ev);
+
 	ev.dataTransfer.setData("id", ev.target.id);
-	console.log(ev.dataTransfer.getData("id"));
 }
 
 function drop(ev) {
-	ev.preventDefault();
 
-	console.log(ev);
+	ev.preventDefault();
 
 	let draggableId = ev.dataTransfer.getData("id");
 	let dropReceiverId = ev.target.id;
@@ -49,5 +47,6 @@ function drop(ev) {
 
 let listeners = [];
 function dragAddListener(callback) {
+	
 	listeners.push(callback);
 }
