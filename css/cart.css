@@ -1,0 +1,43 @@
+.cart {
+	font-size: 0.8em;
+	position: fixed;
+	top:  9.5em;
+	right: 5px;
+	width: 75px;
+	margin: 0;
+	padding: 10px;
+	border: 1px solid #aaaaaa;
+	border-radius: 5%;
+	background-color: white;
+	background-image: url(../img/cart.png);
+    background-size: 90%;
+    background-position-x: center;
+    background-position-y: 20px;
+    background-repeat: no-repeat;
+}
+
+#cartList {
+	width: 100%;
+	list-style: none;
+	padding: 1%;
+	margin: 75px 0 0 0;
+	overflow: scroll;
+    height: 180px;
+    box-sizing: border-box;
+}
+
+.cartListItem {
+	display: grid;
+	flex-flow: column wrap;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	text-align: center;
+}
+
+.cartListItem img {
+	width: 100%;
+}
+
+.cartListItem div {
+	display: none;
+}
