@@ -23,11 +23,8 @@ class Cart {
 	add(item, amount) {
 
 		this.total += amount;
-
 		this.setPartial(item, this.getPartial(item) + amount);
-
 		this.raiseModified(item);
-		console.log(this);
 	}
 
 	substract(item, amount) {

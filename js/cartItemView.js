@@ -15,33 +15,41 @@ class CartItemView {
 		
 		const cartItemId = 'cart' + this.item;
 
-		let itemView = document.getElementById(cartItemId);
 
-		if (!itemView) {
 
-			itemView = document.createElement('li');
-			itemView.id = cartItemId;
-			itemView.className = "cartListItem";
-			itemView.innerHTML = document.getElementById(this.item).innerHTML;
+			this.itemView = document.createElement('li');
+			this.itemView.id = cartItemId;
+			this.itemView.className = "cartListItem";
+			this.itemView.innerHTML = document.getElementById(this.item).innerHTML;
 
 			this.spanPartial = document.createElement('span');
 			this.spanPartial.id = this.item + 'Partial';
-			itemView.appendChild(this.spanPartial);
+			this.itemView.appendChild(this.spanPartial);
 
 			const removeButton = document.createElement('button');
 			removeButton.type = 'button';
 			removeButton.innerHTML = '-';
 			removeButton.addEventListener('click', () => this.cart.substract(this.item, this.value))
-			itemView.appendChild(removeButton);
+			this.itemView.appendChild(removeButton);
 
-			document.querySelector('#cart > ul').appendChild(itemView);
-		}
-
+			const parent = document.querySelector('#cart > ul'); 
+			parent.appendChild(this.itemView);
+			console.log(this);
 	}
 
 	updateItemPartial() {
 
-		console.log(this);
-		this.spanPartial.innerHTML = `${this.cart.getPartial(this.item)}`;
+		const partial = this.cart.getPartial(this.item);
+
+		if (!partial) {
+			this.itemView.remove();
+			this.itemView = null;
+			return;
+		}
+
+		if (!this.itemView) {
+			this._createView();
+		}
+		this.spanPartial.innerHTML = `${partial}`;
 	}
 }

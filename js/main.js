@@ -15,9 +15,6 @@ dragAddListener(
 
 			cartItemViews[draggableId] = new CartItemView(cart, draggableId, draggable.value);
 		}
-		else {
-			cartItemViews[draggableId].updateItemPartial();
-		}
 	}
 );
 
